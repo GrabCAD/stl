@@ -221,19 +221,21 @@ module.exports = {
               return;
             }
 
-            if (data.indexOf('solid') > -1) {
+            var lowerCaseData = data.toLowerCase();
+
+            if (lowerCaseData.indexOf('solid') > -1) {
               stream.queue({
                 description : data.trim().split(' ').slice(1).join(' ')
               });
 
-            } else if (data.indexOf('endfacet') > -1) {
+            } else if (lowerCaseData.indexOf('endfacet') > -1) {
               if (!facet.normal.length) {
                 // facet.normal = computeNormal(facet);
               }
               inFacet = false;
               stream.queue(facet);
               facet = null
-            } else if (data.indexOf('facet') > -1) {
+            } else if (lowerCaseData.indexOf('facet') > -1) {
               // This is not fool proof, but far better than
               // "OH LOOK I NAMED MY STL 'solid'" *sigh*
 
@@ -246,7 +248,7 @@ module.exports = {
                 attributeByteCount: 0
               };
 
-            } else if (data.indexOf('vertex') > -1) {
+            } else if (lowerCaseData.indexOf('vertex') > -1) {
               var coords = data.replace(/ +/g, ' ').trim().split(' ').slice(1).map(parseFloat);
               facet.verts.push(coords);
             } else if (!asciiValid) {

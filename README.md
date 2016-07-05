@@ -87,6 +87,6 @@ This package is now published to artifactory4.grabcad.net, the process is as fol
 
 * when pull request is approved push it to master.
 * checkout master.
-* bump the version in package.json.
+* bump the version in package.json keep the main version the same and bump the eagle.x part.
 * commit the change to your local master.
 

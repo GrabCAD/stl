@@ -1,6 +1,6 @@
 {
   "name": "stl",
-  "version": "1.1.2",
+  "version": "1.1.2.eagle.2",
   "description": "STL to Array of verts and vice versa",
   "main": "stl.js",
   "scripts": {
@@ -17,7 +17,9 @@
     "parser",
     "stream"
   ],
-  "author": "Elijah Insua <tmpvar@gmail.com>",
+  "author": {
+    "name": "GrabCAD"
+  },
   "license": "MIT",
   "readmeFilename": "README.md",
   "dependencies": {
@@ -25,10 +27,15 @@
     "stream-fsm": "^0.3.1",
     "triangle-normal": "0.0.0"
   },
-  "bin" : {
-    "bin" : "bin/stl-cli.js"
-  },
   "devDependencies": {
-    "tape": "^2.13.4"
+    "grunt": "0.4.5",
+    "tape": "2.13.4",
+    "eagle-build-tools": "0.15.0"
+  },
+  "bin": {
+    "bin": "bin/stl-cli.js"
+  },
+  "publishConfig": {
+    "registry": "https://artifactory4.grabcad.net/artifactory/api/npm/npm-local/"
   }
 }

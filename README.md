@@ -81,3 +81,12 @@ fs.createReadStream('./test/ascii/tri.stl')
 # License
 
 MIT
+
+# Blessing (version bump)
+This package is now published to artifactory4.grabcad.net, the process is as follows: -
+
+* when pull request is approved push it to master.
+* checkout master.
+* bump the version in package.json.
+* commit the change to your local master.
+
